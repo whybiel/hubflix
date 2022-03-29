@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import styled from "styled-components"
+import { createGlobalStyle } from "styled-components"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Rota from "./components/routes"
+
+const GlobalStyle = createGlobalStyle`
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        color:orange;
+    }
+    body{
+        background-color:#000009;
+        font-family: 'Francois One', sans-serif;
+    }
+`
+
+const Cont = styled.div`
+    width:100%;
+    
+`
+
+export default class GG extends React.Component{
+    
+    render(){
+        return(
+        <div>
+            
+            <Cont>
+            <Rota/>
+            </Cont>
+            <GlobalStyle/>
+        </div>
+    )
+    }
+
 }
-
-export default App;
