@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/teugroove/static/js/main.dbd36d77.js",
+    "static/js/787.377a0c3c.chunk.js": "/teugroove/static/js/787.377a0c3c.chunk.js",
+    "index.html": "/teugroove/index.html",
+    "main.dbd36d77.js.map": "/teugroove/static/js/main.dbd36d77.js.map",
+    "787.377a0c3c.chunk.js.map": "/teugroove/static/js/787.377a0c3c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.dbd36d77.js"
+  ]
+}
