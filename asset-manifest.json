@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/hubflix/static/js/main.5b44f8c4.js",
+    "main.js": "/hubflix/static/js/main.a0c57630.js",
     "static/js/787.377a0c3c.chunk.js": "/hubflix/static/js/787.377a0c3c.chunk.js",
     "index.html": "/hubflix/index.html",
-    "main.5b44f8c4.js.map": "/hubflix/static/js/main.5b44f8c4.js.map",
+    "main.a0c57630.js.map": "/hubflix/static/js/main.a0c57630.js.map",
     "787.377a0c3c.chunk.js.map": "/hubflix/static/js/787.377a0c3c.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.5b44f8c4.js"
+    "static/js/main.a0c57630.js"
   ]
 }
