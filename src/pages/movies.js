@@ -9,10 +9,15 @@ const ApiFilms = Axios.create({
 export default class Movie extends React.Component{
 
   state={
-    listFilmes: [""],
+    listFilmes: [],
+    FilmsFilter:[]
   }
 
   async componentDidMount(){
+    this.getFilms()
+  }
+
+  getFilms = async () => {
     const response = await ApiFilms.get()
     console.log(response.data.results)
 
@@ -24,17 +29,46 @@ export default class Movie extends React.Component{
     })
 
     this.setState({
-      listFilmes: filmes
+      listFilmes: filmes,
+      FilmsFilter:filmes
     })
   }
+
+  filterFilms = (e) => {
+    const {listFilmes} = this.state
+
+    if(e.target.value === ""){
+      this.setState({
+        FilmsFilter: listFilmes
+      })
+      return
+    }
+
+    const FilmsConvert = listFilmes.filter((item) => {
+      if (item.title.toLowerCase().includes(e.target.value.toLowerCase())){
+        return true
+      }
+    })
+
+    this.setState({
+      FilmsFilter: FilmsConvert
+    })
+  }
+
+  
 
   render(){
     return(
       <div>
+        <input
+          type="text"
+          placeholder="Digite o nome do filme..."
+          onChange={this.filterFilms}
+        />
         <h1>Filmes</h1>
-        {this.state.listFilmes.map((item) => (
+        {this.state.FilmsFilter.map((item) => (
             <div>
-              <h2>{item.title}</h2>
+              <h2 key={item.id}>{item.title}</h2>
                 <img src={item.poster} alt={`Capa do filme: ${item.title}`} title={`${item.title}`}/>
             </div>
         ))}

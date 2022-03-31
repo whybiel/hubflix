@@ -1,7 +1,7 @@
 {
   "name": "tuegroove",
   "version": "0.1.0",
-  "homepage": "https://whybiel.github.io/teugroove",
+  "homepage": "https://whybiel.github.io/hubflix",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
@@ -40,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
   }
 }
