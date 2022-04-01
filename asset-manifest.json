@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/hubflix/static/js/main.e708431a.js",
+    "main.js": "/hubflix/static/js/main.a98a8030.js",
     "static/js/787.377a0c3c.chunk.js": "/hubflix/static/js/787.377a0c3c.chunk.js",
     "static/media/whatsapp.png": "/hubflix/static/media/whatsapp.29dd41c9009c90f690c6.png",
     "static/media/instagram.png": "/hubflix/static/media/instagram.edb90ecc706a7a25542b.png",
     "index.html": "/hubflix/index.html",
-    "main.e708431a.js.map": "/hubflix/static/js/main.e708431a.js.map",
+    "main.a98a8030.js.map": "/hubflix/static/js/main.a98a8030.js.map",
     "787.377a0c3c.chunk.js.map": "/hubflix/static/js/787.377a0c3c.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.e708431a.js"
+    "static/js/main.a98a8030.js"
   ]
 }
