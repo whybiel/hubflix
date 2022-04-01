@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import styled from "styled-components"
 
 import Github from "./img/github.png"
@@ -8,7 +8,6 @@ import Whatsap from "./img/whatsapp.png"
 
 const Container = styled.div`
     width:100%;
-    height:91vh;
     background-color:#FF4500;
 `
 const Animation = styled.div`
@@ -42,6 +41,11 @@ const Images = styled.img`
     width:2vw;
 `
 
+const Copy = styled.p`
+    color:#000;
+    font-family: 'Josefin Sans', sans-serif;
+`
+
 export default class Home extends React.Component{
 
     render(){
@@ -62,9 +66,10 @@ export default class Home extends React.Component{
                     <Images src={Whatsap} alt="Logo do whatsapp"/>
                     </a>
 
-                    <p>© Copyright. Todos os Direitos Reservados</p>
+                    <Copy>© Copyright. Todos os Direitos Reservados</Copy>
                 </Rodape>
             </Container>
         )
     }
 }
+

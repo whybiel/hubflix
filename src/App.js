@@ -12,17 +12,35 @@ import Home from "./pages/home"
 import Filmes from "./pages/movies"
 import Series from "./pages/shows"
 
+
+/* Header */
 const GlobalStyle = createGlobalStyle`
   *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    color:white;
+  }
+  body{
+    background-color:#1C1C1C;
+  }
+  ::-webkit-scrollbar{
+    width:5px;
+  }
+  ::-webkit-scrollbar-track{
+    background:#1C1C1C;
+  }
+  ::-webkit-scrollbar-thumb{
+    width:2px;
+    background: #fff;
+    border-radius: 30px;
   }
 `
 const Navbar = styled.nav`
   width:100%;
   height:9vh;
-  color:#000;
+  background-color:#fff;
+  border-bottom:1px solid white;
 `
 const StyleLink = styled(Link)`
   color:#000;
@@ -56,19 +74,23 @@ const Item = styled.li`
 const Title = styled.li`
   font-size:2rem;
   font-family: 'Lobster', cursive;
-  color:#fff;
   background-color:#000;
   padding:0.5vw 0.5vh;
   border-radius:10px;
   text-decoration:none;
   position:absolute;
   left:2vw;
+  color:#FF4500;
+  font-weight:bold;
+  box-shadow:0px 0px 5px 5px orangered;
+  cursor:pointer;
 
   &:hover{
-    color:#FF4500;
-    font-weight:bold;
+    color:#fff;
+    box-shadow:none;
   }
 `
+
 
 export default class Nav extends React.Component{
   render(){
@@ -89,6 +111,7 @@ export default class Nav extends React.Component{
               </Item>
           </List>
       </Navbar>
+            
       <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/filmes" element={<Filmes/>}/>
