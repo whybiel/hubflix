@@ -101,7 +101,7 @@ export default class Nav extends React.Component{
           <List>
               <Title>HubFlix</Title>
               <Item>
-                  <StyleLink to="/">Home</StyleLink>
+                  <StyleLink to="/hubflix">Home</StyleLink>
               </Item>
               <Item>
                   <StyleLink to="filmes">Filmes</StyleLink>
@@ -113,7 +113,7 @@ export default class Nav extends React.Component{
       </Navbar>
             
       <Routes>
-          <Route path="/" element={<Home/>}/>
+          <Route path="/hubflix" element={<Home/>}/>
           <Route path="/filmes" element={<Filmes/>}/>
           <Route path="/series" element={<Series/>}/>
       </Routes>
