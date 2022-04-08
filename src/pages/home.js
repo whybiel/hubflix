@@ -39,6 +39,10 @@ const Rodape = styled.div`
 `
 const Images = styled.img`
     width:2vw;
+
+    &:hover{
+        margin-bottom:1vh;
+    }
 `
 
 const Copy = styled.p`

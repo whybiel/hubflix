@@ -19,6 +19,23 @@ const ContTop = styled.div`
   align-items:center;
   margin:5vh 0 5vh 0;
 `
+const BtnTop = styled.button`
+  width:5vw;
+  height:5vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size:1.2rem;
+  padding:1vh 0.5vw 1vh 0.5vw; 
+  background-color:orangered;
+  border:none;
+  position:fixed;
+  top: 90vh;
+  left:0vw;
+`
+
 const Search = styled.input`
   width:15vw;
   height:5vh;
@@ -146,12 +163,13 @@ export default class Show extends React.Component{
       <MegaBox>
         <ContTop>
         <Title>Filmes</Title>
-        <Search
+        <Search id="#"
           type="text"
           placeholder="Digite o nome da série..."
           onChange={this.filterSeries}
         />
         </ContTop>
+        <a href="#"><BtnTop>↑ TOPO</BtnTop></a>
         {this.state.FilterShows.map((item) => (
             <Container key={item.id}>
               <SubContainer>

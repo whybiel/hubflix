@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Axios from "axios"
 
 const ApiFilms = Axios.create({
-  baseURL:"https://api.themoviedb.org/3/movie/popular?api_key=28440a19c8a5282c770fccf50ba63ae7&language=pt-BR&page=1"
+  baseURL: "https://api.themoviedb.org/3/movie/popular?api_key=28440a19c8a5282c770fccf50ba63ae7&language=pt-BR&page=1"
 })
 
 const MegaBox = styled.div`
@@ -18,6 +18,22 @@ const ContTop = styled.div`
   justify-content:space-evenly;
   align-items:center;
   margin:5vh 0 5vh 0;
+`
+const BtnTop = styled.button`
+  width:5vw;
+  height:5vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size:1.2rem;
+  padding:1vh 0.5vw 1vh 0.5vw; 
+  background-color:orangered;
+  border:none;
+  position:fixed;
+  top: 90vh;
+  left:0vw;
 `
 const Search = styled.input`
   width:15vw;
@@ -93,14 +109,15 @@ const Sumary = styled.summary`
   font-family: 'Josefin Sans', sans-serif;
 `
 
-export default class Movie extends React.Component{
+export default class Movie extends React.Component {
 
-  state={
+  state = {
     listFilmes: [],
-    FilmsFilter:[]
+    FilmsFilter: [],
+    errorMsg: ""
   }
 
-  async componentDidMount(){
+  async componentDidMount() {
     this.getFilms()
   }
 
@@ -109,22 +126,22 @@ export default class Movie extends React.Component{
     console.log(response.data.results)
 
     const filmes = response.data.results.map((item) => {
-      return{
+      return {
         ...item,
-        poster:`https://image.tmdb.org/t/p/w500/${item.poster_path}`
+        poster: `https://image.tmdb.org/t/p/w500/${item.poster_path}`
       }
     })
 
     this.setState({
       listFilmes: filmes,
-      FilmsFilter:filmes
+      FilmsFilter: filmes
     })
   }
 
   filterFilms = (e) => {
-    const {listFilmes} = this.state
+    const { listFilmes } = this.state
 
-    if(e.target.value === ""){
+    if (e.target.value === "") {
       this.setState({
         FilmsFilter: listFilmes
       })
@@ -132,7 +149,7 @@ export default class Movie extends React.Component{
     }
 
     const FilmsConvert = listFilmes.filter((item) => {
-      if (item.title.toLowerCase().includes(e.target.value.toLowerCase())){
+      if (item.title.toLowerCase().includes(e.target.value.toLowerCase())) {
         return true
       }
     })
@@ -140,40 +157,42 @@ export default class Movie extends React.Component{
     this.setState({
       FilmsFilter: FilmsConvert
     })
+
   }
 
-  render(){
-    return(
+
+  render() {
+    return (
       <MegaBox>
         <ContTop>
-        <Title>Filmes</Title>
-        <Search
-          type="text"
-          placeholder="Digite o nome do filme..."
-          onChange={this.filterFilms}
-        />
+          <Title>Filmes</Title>
+          <Search id="#"
+            type="text"
+            placeholder="Digite o nome do filme..."
+            onChange={this.filterFilms}
+          />
         </ContTop>
+        <a href="#"><BtnTop>↑ TOPO</BtnTop></a>
         {this.state.FilmsFilter.map((item) => (
-            <Container key={item.id}>
-              <SubContainer>
-                <Title>{item.title}</Title>
-                <ContImg>
-                  <Image src={item.poster} alt={`Capa do filme: ${item.title}`} title={`${item.title}`}/>
-                  <SubContImg>
-                    <Descrition>Nota: <Span>{item.vote_average}</Span></Descrition>
-                    <Descrition>Votos: <Span>{item.vote_count}</Span></Descrition>
-                    <Descrition>Data de Laçamento: <Span>{item.release_date}</Span></Descrition>
-                    <Details>
+          <Container key={item.id} >
+            <SubContainer>
+              <Title>{item.title}</Title>
+              <ContImg>
+                <Image src={item.poster} alt={`Capa do filme: ${item.title}`} title={`${item.title}`} />
+                <SubContImg>
+                  <Descrition>Nota: <Span>{item.vote_average}</Span></Descrition>
+                  <Descrition>Votos: <Span>{item.vote_count}</Span></Descrition>
+                  <Descrition>Data de Laçamento: <Span>{item.release_date}</Span></Descrition>
+                  <Details>
                     <Sumary>Sinopse</Sumary>
                     <Descrition>{item.overview}</Descrition>
                   </Details>
-                  </SubContImg>
-                  
-                </ContImg>
-                
-              </SubContainer>
-            </Container>
+                </SubContImg>
+              </ContImg>
+            </SubContainer>
+          </Container>
         ))}
+
       </MegaBox>
     )
   }
