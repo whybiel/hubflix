@@ -162,7 +162,7 @@ export default class Show extends React.Component{
     return(
       <MegaBox>
         <ContTop>
-        <Title>Filmes</Title>
+        <Title>Séries</Title>
         <Search id="#"
           type="text"
           placeholder="Digite o nome da série..."
